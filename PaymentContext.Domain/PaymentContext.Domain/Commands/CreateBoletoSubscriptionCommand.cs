@@ -1,25 +1,17 @@
 ﻿using PaymentContext.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PaymentContext.Domain.Commands
 {
     public class CreateBoletoSubscriptionCommand
     {
+        #region Attributes
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-
         public string Document { get; set; }
-
-
         public string Email { get; set; }
-
         public string BarCode { get; private set; }
         public string BoletoNumber { get; private set; }
-
-
         public string PaymentNumber { get; set; }
         public DateTime PaidDate { get; set; }
         public DateTime ExpireDate { get; set; }
@@ -36,5 +28,6 @@ namespace PaymentContext.Domain.Commands
         public string State { get; private set; }
         public string Country { get; private set; }
         public string ZipCode { get; private set; }
+        #endregion
     }
 }

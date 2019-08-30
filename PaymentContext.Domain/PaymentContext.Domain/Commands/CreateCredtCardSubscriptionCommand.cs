@@ -5,20 +5,14 @@ namespace PaymentContext.Domain.Commands
 {
     public class CreateCredtCardSubscriptionCommand
     {
+        #region Attributes
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-
         public string Document { get; set; }
-
-
         public string Email { get; set; }
-
         public string CardHolderName { get; private set; }
         public string CardNumber { get; private set; }
         public string LastTransactionNumber { get; private set; }
-
-
         public string PaymentNumber { get; set; }
         public DateTime PaidDate { get; set; }
         public DateTime ExpireDate { get; set; }
@@ -35,5 +29,6 @@ namespace PaymentContext.Domain.Commands
         public string State { get; private set; }
         public string Country { get; private set; }
         public string ZipCode { get; private set; }
+        #endregion
     }
 }

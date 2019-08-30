@@ -8,15 +8,16 @@ namespace PaymentContext.Tests.Entities
     [TestClass]
     public class StudentTests
     {
+        #region Private Attributes
         private readonly Name _name;
         private readonly Document _document;
         private readonly Email _email;
         private readonly Address _address;
         private readonly Student _student;
         private readonly Subscription _subscription;
+        #endregion
 
-
-
+        #region Constructors
         public StudentTests()
         {
             _name = new Name("Bruce", "Wayne");
@@ -27,7 +28,9 @@ namespace PaymentContext.Tests.Entities
             _subscription = new Subscription(null);
 
         }
+        #endregion
 
+        #region Should Return Error Tests
         [TestMethod]
         public void ShouldReturnErrorWhenHadActiveSubscription()
         {
@@ -46,7 +49,9 @@ namespace PaymentContext.Tests.Entities
 
             Assert.IsTrue(_student.Invalid);
         }
+        #endregion
 
+        #region Should Return Success Tests
         [TestMethod]
         public void ShouldReturnSuccessWhenAddSubscription()
         {
@@ -56,5 +61,6 @@ namespace PaymentContext.Tests.Entities
 
             Assert.IsTrue(_student.Valid);
         }
+        #endregion
     }
 }

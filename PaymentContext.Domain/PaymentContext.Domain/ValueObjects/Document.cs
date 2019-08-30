@@ -6,6 +6,7 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Document : ValueObject
     {
+        #region Constructors
         public Document(string number, EDocumentType type)
         {
             Number = number;
@@ -16,10 +17,16 @@ namespace PaymentContext.Domain.ValueObjects
                 .IsTrue(Validate(), "Document.Number", "Documento inválido")
                 );
         }
+        #endregion
 
+        #region Attributes
         public string Number { get; private set; }
         public EDocumentType Type { get; private set; }
+        #endregion
 
+        #region Methods
+
+        #region Private Methods
         private bool Validate()
         {
             if (Type == EDocumentType.CNPJ && Number.Length == 14)
@@ -33,5 +40,8 @@ namespace PaymentContext.Domain.ValueObjects
 
             return false;
         }
+        #endregion
+
+        #endregion
     }
 }

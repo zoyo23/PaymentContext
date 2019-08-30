@@ -5,6 +5,7 @@ namespace PaymentContext.Domain.Entities
 {
     public class PayPalPayment : Payment
     {
+        #region Constructors
         public PayPalPayment(
             string transactionCode,
             DateTime paidDate,
@@ -20,7 +21,10 @@ namespace PaymentContext.Domain.Entities
         {
             TransactionCode = transactionCode;
         }
+        #endregion
 
+        #region Attributes
         public string TransactionCode { get; private set; }
+        #endregion
     }
 }

@@ -6,7 +6,9 @@ namespace PaymentContext.Tests.ValueObjects
     [TestClass]
     public class DocumentTests
     {
-        //RED, GREEN, REFACTOR
+        //TODO Note: RED, GREEN, REFACTOR
+
+        #region Should Return Error Tests
         [TestMethod]
         public void ShouldReturnErrorWhenCNPJIsInvalid()
         {
@@ -15,17 +17,19 @@ namespace PaymentContext.Tests.ValueObjects
         }
 
         [TestMethod]
-        public void ShouldReturnSuccessWhenCNPJIsValid()
-        {
-            var doc = new Document("96958028000105", Domain.Enums.EDocumentType.CNPJ);
-            Assert.IsTrue(doc.Valid);
-        }
-
-        [TestMethod]
         public void ShouldReturnErrorWhenCPFIsInvalid()
         {
             var doc = new Document("123", Domain.Enums.EDocumentType.CPF);
             Assert.IsTrue(doc.Invalid);
+        }
+        #endregion
+
+        #region Should Return Success Tests
+        [TestMethod]
+        public void ShouldReturnSuccessWhenCNPJIsValid()
+        {
+            var doc = new Document("96958028000105", Domain.Enums.EDocumentType.CNPJ);
+            Assert.IsTrue(doc.Valid);
         }
 
         [TestMethod]
@@ -37,6 +41,7 @@ namespace PaymentContext.Tests.ValueObjects
             var doc = new Document(cpf, Domain.Enums.EDocumentType.CPF);
             Assert.IsTrue(doc.Valid);
         }
+        #endregion
 
     }
 }

@@ -5,6 +5,7 @@ namespace PaymentContext.Domain.Entities
 {
     public class BoletoPayment : Payment
     {
+        #region Constructors
         public BoletoPayment(
             string barCode,
             string boletoNumber,
@@ -22,8 +23,11 @@ namespace PaymentContext.Domain.Entities
             BarCode = barCode;
             BoletoNumber = boletoNumber;
         }
+        #endregion
 
+        #region Attributes
         public string BarCode { get; private set; }
         public string BoletoNumber { get; private set; }
+        #endregion
     }
 }

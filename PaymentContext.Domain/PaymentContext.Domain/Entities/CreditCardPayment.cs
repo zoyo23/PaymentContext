@@ -5,6 +5,7 @@ namespace PaymentContext.Domain.Entities
 {
     public class CreditCardPayment : Payment
     {
+        #region Constructors
         public CreditCardPayment(
             string cardHolderName,
             string cardNumber,
@@ -24,9 +25,12 @@ namespace PaymentContext.Domain.Entities
             CardNumber = cardNumber;
             LastTransactionNumber = lastTransactionNumber;
         }
+        #endregion
 
+        #region Attributes
         public string CardHolderName { get; private set; }
         public string CardNumber { get; private set; }
         public string LastTransactionNumber { get; private set; }
+        #endregion
     }
 }

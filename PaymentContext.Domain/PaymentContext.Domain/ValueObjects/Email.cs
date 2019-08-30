@@ -5,6 +5,7 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Email : ValueObject
     {
+        #region Constructors
         public Email(string address)
         {
             Address = address;
@@ -13,7 +14,10 @@ namespace PaymentContext.Domain.ValueObjects
                 .Requires()
                 .IsEmail(Address, "Email.Address", "Email inválido."));
         }
+        #endregion
 
+        #region Attributes
         public string Address { get; private set; }
+        #endregion
     }
 }

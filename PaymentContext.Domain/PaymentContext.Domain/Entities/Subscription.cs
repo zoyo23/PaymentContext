@@ -8,8 +8,11 @@ namespace PaymentContext.Domain.Entities
 {
     public class Subscription : Entity
     {
+        #region Private Attributes
         private IList<Payment> _payments;
+        #endregion
 
+        #region Constructors
         public Subscription(DateTime? expireDate)
         {
             CreateDate = DateTime.Now;
@@ -18,13 +21,19 @@ namespace PaymentContext.Domain.Entities
             Active = true;
             _payments = new List<Payment>();
         }
+        #endregion
 
+        #region Attributes
         public DateTime CreateDate { get; private set; }
         public DateTime LastUpdateDate { get; private set; }
         public DateTime? ExpireDate { get; private set; }
         public bool Active { get; private set; }
         public IReadOnlyCollection<Payment> Payments { get { return _payments.ToArray(); } }
+        #endregion
 
+        #region Methods
+
+        #region Public Methods
         public void AddPayment(Payment payment)
         {
             AddNotifications(new Contract()
@@ -35,7 +44,6 @@ namespace PaymentContext.Domain.Entities
             //if(Valid)
             _payments.Add(payment);
         }
-
         public void Activate()
         {
             Active = true;
@@ -46,5 +54,8 @@ namespace PaymentContext.Domain.Entities
             Active = false;
             LastUpdateDate = DateTime.Now;
         }
+        #endregion
+
+        #endregion
     }
 }

@@ -5,6 +5,7 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Address : ValueObject
     {
+        #region Constructors
         public Address(string street, string number, string neighborhood, string city, string state, string country, string zipCode)
         {
             Street = street;
@@ -20,7 +21,9 @@ namespace PaymentContext.Domain.ValueObjects
                 .HasMinLen(Street, 3, "Address.Street", "Rua conter no minimo 3 caracteres.")
                 );
         }
+        #endregion
 
+        #region Attributes
         public string Street { get; private set; }
         public string Number { get; private set; }
         public string Neighborhood { get; private set; }
@@ -28,5 +31,6 @@ namespace PaymentContext.Domain.ValueObjects
         public string State { get; private set; }
         public string Country { get; private set; }
         public string ZipCode { get; private set; }
+        #endregion
     }
 }
