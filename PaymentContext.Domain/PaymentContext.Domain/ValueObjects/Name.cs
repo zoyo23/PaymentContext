@@ -25,5 +25,16 @@ namespace PaymentContext.Domain.ValueObjects
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         #endregion
+
+        #region Methods
+
+        #region Public Methods
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
+        #endregion
+
+        #endregion
     }
 }

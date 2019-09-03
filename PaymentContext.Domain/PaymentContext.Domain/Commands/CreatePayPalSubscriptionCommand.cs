@@ -37,7 +37,6 @@ namespace PaymentContext.Domain.Commands
         #region Publics Methods
         public void Validate()
         {
-
             AddNotifications(new Contract()
                 .Requires()
                 .HasMinLen(FirstName, 3, "Name.FirstName", "Nome deve conter no minimo 3 caracteres.")
