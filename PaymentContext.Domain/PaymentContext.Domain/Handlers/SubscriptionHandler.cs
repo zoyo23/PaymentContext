@@ -47,7 +47,7 @@ namespace PaymentContext.Domain.Handlers
             // Verificar se Documento já está cadastrado;
             if (_studentRepository.DocumentExists(command.Document))
             {
-                AddNotification("Document", "Este CPF já está em uso.");
+                AddNotification("Document", "Este documento de CPF já está em uso.");
             }
 
             // Verificar se email já está cadastrado;

@@ -8,6 +8,8 @@ namespace PaymentContext.Tests.Entities
     [TestClass]
     public class StudentTests
     {
+        //TODO Note: RED, GREEN, REFACTOR
+
         #region Private Attributes
         private readonly Name _name;
         private readonly Document _document;

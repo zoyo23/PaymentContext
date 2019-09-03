@@ -6,6 +6,16 @@ namespace PaymentContext.Tests.Commands
     [TestClass]
     public class CreatePayPalSubscriptionCommandTests
     {
+        //TODO Note: RED, GREEN, REFACTOR
+
+        #region Private Attributes
+
+        #endregion
+
+        #region Constructors
+
+        #endregion
+
         #region Should Return Error Tests
         [TestMethod]
         public void ShouldReturnErrorWhenNameIsInvalid()
@@ -16,6 +26,10 @@ namespace PaymentContext.Tests.Commands
 
             Assert.AreEqual(false, command.Valid);
         }
+        #endregion
+
+        #region Should Return Success Tests
+
         #endregion
     }
 }

@@ -8,6 +8,14 @@ namespace PaymentContext.Tests.ValueObjects
     {
         //TODO Note: RED, GREEN, REFACTOR
 
+        #region Private attributes
+
+        #endregion
+
+        #region Constructors
+
+        #endregion
+
         #region Should Return Error Tests
         [TestMethod]
         public void ShouldReturnErrorWhenCNPJIsInvalid()
@@ -42,6 +50,5 @@ namespace PaymentContext.Tests.ValueObjects
             Assert.IsTrue(doc.Valid);
         }
         #endregion
-
     }
 }
